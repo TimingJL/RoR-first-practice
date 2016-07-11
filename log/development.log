@@ -3122,3 +3122,138 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 120ms (Views: 116.5ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/events" for 127.0.0.1 at 2016-07-11 20:45:32 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 174ms (Views: 161.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/events.xml" for 127.0.0.1 at 2016-07-11 20:45:41 +0800
+Processing by EventsController#index as XML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+Completed 200 OK in 41ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 21:01:48 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (65.0ms)
+Completed 200 OK in 146ms (Views: 133.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events/1.xml" for 127.0.0.1 at 2016-07-11 21:01:57 +0800
+Processing by EventsController#show as XML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 20ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=1):
+  
+app/controllers/events_controller.rb:64:in `set_event'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.5ms)
+Started GET "/events" for 127.0.0.1 at 2016-07-11 21:03:06 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 121ms (Views: 107.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2016-07-11 21:03:14 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 96ms (Views: 80.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/2.json" for 127.0.0.1 at 2016-07-11 21:03:20 +0800
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/2.xml" for 127.0.0.1 at 2016-07-11 21:03:29 +0800
+Processing by EventsController#show as XML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/show.xml.builder
+  Rendered events/show.xml.builder (1.4ms)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2016-07-11 21:03:38 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 91ms (Views: 82.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 21:05:08 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (54.2ms)
+Completed 200 OK in 117ms (Views: 113.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2016-07-11 21:05:22 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 87ms (Views: 82.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/2.xml" for 127.0.0.1 at 2016-07-11 21:05:25 +0800
+Processing by EventsController#show as XML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/show.xml.builder
+  Rendered events/show.xml.builder (1.4ms)
+Completed 200 OK in 22ms (Views: 9.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/2.json" for 127.0.0.1 at 2016-07-11 21:05:27 +0800
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events.atom" for 127.0.0.1 at 2016-07-11 21:05:30 +0800
+Processing by EventsController#index as ATOM
+  Rendering events/index.atom.builder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered events/index.atom.builder (13.3ms)
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 0.5ms)
+
+
