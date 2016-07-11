@@ -2909,3 +2909,216 @@ Completed 200 OK in 90ms (Views: 85.4ms | ActiveRecord: 1.8ms)
 
 DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/timing/Desktop/RoR-first-practice/config/routes.rb:7)
 DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/timing/Desktop/RoR-first-practice/config/routes.rb:7)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/timing/Desktop/RoR-first-practice/config/routes.rb:7)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/timing/Desktop/RoR-first-practice/config/routes.rb:7)
+Started GET "/events" for 127.0.0.1 at 2016-07-11 17:45:00 +0800
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/timing/Desktop/RoR-first-practice/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/timing/Desktop/RoR-first-practice/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (96.6ms)
+Completed 200 OK in 844ms (Views: 813.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2016-07-11 17:45:07 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 102ms (Views: 92.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 17:45:11 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (76.6ms)
+Completed 200 OK in 231ms (Views: 222.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2016-07-11 17:45:22 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (32.7ms)
+  Rendered events/edit.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 172ms (Views: 164.7ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/events/1" for 127.0.0.1 at 2016-07-11 17:45:24 +0800
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3VzRP2MO+B/WbLXLnUW1KVE/Xx6PiqMW/rETGkKIHBxjno5diqVN5VsGYn6uqKezF0I93zbfy1egJPJ8MNy2Sg==", "event"=>{"name"=>"abc123", "description"=>"fooobarrrf"}, "commit"=>"Update", "id"=>"1"}
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "events" SET "description" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["description", "fooobarrrf"], ["updated_at", 2016-07-11 09:45:24 UTC], ["id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 33ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2016-07-11 17:45:24 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 110ms (Views: 105.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 17:45:28 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 140ms (Views: 136.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2016-07-11 17:45:30 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 91ms (Views: 86.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 17:45:33 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 132ms (Views: 128.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2016-07-11 20:13:36 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 75ms (Views: 68.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2016-07-11 20:14:01 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (5.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (3.5ms)
+  Rendered events/edit.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 83ms (Views: 71.6ms | ActiveRecord: 5.2ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/timing/Desktop/RoR-first-practice/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at /home/timing/Desktop/RoR-first-practice/config/routes.rb:8)
+Started GET "/events/1/edit" for 127.0.0.1 at 2016-07-11 20:37:45 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (2.2ms)
+  Rendered events/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 122ms (Views: 81.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 20:37:53 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 95ms (Views: 89.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2016-07-11 20:37:57 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 68ms (Views: 63.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 20:37:59 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 103ms (Views: 99.2ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/events/1" for 127.0.0.1 at 2016-07-11 20:38:06 +0800
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0sRVv9b8Heh/zIUg5M6Nb2Zbjq5fsJnpvjYVd8VXx1fPi2hZB6u5+Vfbe6/gcKpBJGfIdKhptqbCOQIkIQvXGQ==", "id"=>"1"}
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 25ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 20:38:06 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 97ms (Views: 93.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2016-07-11 20:38:09 +0800
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (2.9ms)
+  Rendered events/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2016-07-11 20:38:16 +0800
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6O4MK/ff7GWg6JKleGTpdliU+G+oE0biXPi7G9iWDcIW0XmAYp2RjH1CV7enovvNcD8ixzV1d4fy6MI1TaVyLQ==", "event"=>{"name"=>"Timing", "description"=>"hahaha"}, "commit"=>"Create"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Timing"], ["description", "hahaha"], ["created_at", 2016-07-11 12:38:16 UTC], ["updated_at", 2016-07-11 12:38:16 UTC]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 25ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 20:38:16 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 96ms (Views: 92.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events?page=2" for 127.0.0.1 at 2016-07-11 20:38:19 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 123ms (Views: 119.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2016-07-11 20:38:22 +0800
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 120ms (Views: 116.5ms | ActiveRecord: 1.0ms)
+
+
