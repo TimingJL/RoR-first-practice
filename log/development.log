@@ -6185,3 +6185,31 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 104ms (Views: 100.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/events?page=3" for 127.0.0.1 at 2016-07-13 11:40:25 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"3"}
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 10]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 124ms (Views: 107.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events/15/dashboard" for 127.0.0.1 at 2016-07-13 11:40:29 +0800
+Processing by EventsController#dashboard as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering events/dashboard.html.erb within layouts/application
+  Rendered events/dashboard.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 84ms (Views: 80.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/16/dashboard" for 127.0.0.1 at 2016-07-13 11:40:48 +0800
+Processing by EventsController#dashboard as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering events/dashboard.html.erb within layouts/application
+  Rendered events/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 64.0ms | ActiveRecord: 0.9ms)
+
+

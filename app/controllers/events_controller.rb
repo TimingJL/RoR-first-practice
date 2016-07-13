@@ -47,6 +47,10 @@ class EventsController < ApplicationController
 	  flash[:notice] = "event was successfully updated"
 	end
 
+	def dashboard
+	    @event = Event.find(params[:id])
+	end	
+
 	def destroy
 	  @event.destroy
 

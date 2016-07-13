@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 		    get :latest
 		    post :bulk_delete
 		    post :bulk_update
-		end	  
+		end
+		member do
+		    get :dashboard
+		end		
 	end	
 	resources :people
 	get "welcome/say_hello" => "welcome#say"
