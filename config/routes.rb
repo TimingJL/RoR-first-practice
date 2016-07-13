@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 	#resources :events
 	resources :events do
-	  resources :attendees, :controller => 'event_attendees'
-	  resource :location, :controller => 'event_locations'
+		resources :attendees, :controller => 'event_attendees'
+		resource :location, :controller => 'event_locations'
+
+		collection do
+		    get :latest
+		    post :bulk_delete
+		    post :bulk_update
+		end	  
 	end	
 	resources :people
 	get "welcome/say_hello" => "welcome#say"
